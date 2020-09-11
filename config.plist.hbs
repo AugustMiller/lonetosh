@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key># Date</key>
-	<string>Created 2020-08-22</string>
+	<string>Compiled {{ date }}</string>
 	<key># Target</key>
-	<string>Lone L5, Gigabyte Z370n, 8500T</string>
+	<string>{{ ENV.TARGET_STRING }}</string>
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
@@ -879,17 +879,17 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02031100CDLNV91M</string>
+			<string>{{ ENV.BOARD_SERIAL }}</string>
 			<key>ROM</key>
 			<data>ESIzRFVm</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>iMac19,1</string>
+			<string>{{ ENV.SMBIOS }}</string>
 			<key>SystemSerialNumber</key>
-			<string>C02D59Y4JV3Q</string>
+			<string>{{ ENV.SERIAL }}</string>
 			<key>SystemUUID</key>
-			<string>1D70A642-1662-4175-BCE1-CDFEE4AB99EC</string>
+			<string>{{ ENV.UUID }}</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>

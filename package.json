@@ -1,0 +1,15 @@
+{
+  "name": "lonetosh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AugustMiller/lonetosh.git",
+  "license": "MIT",
+  "dependencies": {
+    "date-format": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6"
+  },
+  "scripts": {
+    "build": "node index.mjs"
+  }
+}

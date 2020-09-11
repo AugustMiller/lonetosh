@@ -34,14 +34,15 @@ See the official [OpenCore installation guide](https://dortania.github.io/OpenCo
 
 Everything herein is configured to work with a specific set of components:
 
-- [Intel i5 8500T](https://ark.intel.com/content/www/us/en/ark/products/129941/intel-core-i5-8500t-processor-9m-cache-up-to-3-50-ghz.html) 6-core CPU with embedded UHD 630 graphics
+- [Intel i5 8500T](https://ark.intel.com/content/www/us/en/ark/products/129941/intel-core-i5-8500t-processor-9m-cache-up-to-3-50-ghz.html) 6-core CPU with embedded UHD 630 graphics. This ship is power-limited to 35W, meaning it can be run cooler + quieter than its non-T counterpart.
 - [Gigabyte Z370n-WIFI](https://www.gigabyte.com/Motherboard/Z370N-WIFI-rev-10/support#support-dl-driver) mainboard
 - 2 &times; 16GB DIMMs of [Corsair Vengeance LPX](https://www.corsair.com/us/en/Categories/Products/Memory/VENGEANCE-LPX/p/CMK32GX4M2D3600C18) RAM
 - 1TB [Intel 660p](https://www.intel.com/content/www/us/en/products/memory-storage/solid-state-drives/consumer-ssds/6-series/ssd-660p-series/660p-series-1-tb-m-2-80mm-3d2.html) NVMe M.2 SSD
 - [HDPlex 200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) direct-plug PSU
 - Dell DW1560 wireless adapter (Broadcom BCM94352Z chipset), replacing the Intel adapter that comes with the Z370N.
 - 19V Dell AC-DC power brick
-- 2 &times; 80mm Noctua NF-R8 fans
+- ARCTIC [Alpine 12](https://www.arctic.ac/en/Alpine-12-Passive/ACALP00024A) passive CPU heatsink
+- 2 &times; 80mm Noctua NF-R8 Redux PWM-controllable fans
 - [Lone L5](https://loneindustries.com/products/5) case
 
 > Do not attempt to use this EFI folder without understanding _why_ it works with this hardware—even if you are running an identical machine.
@@ -52,3 +53,4 @@ I chose the hardware with the intention of running many concurrent virtual machi
 
 NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of heavy use and the silicon lottery), I'm still super impressed with the speed.
 
+The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.

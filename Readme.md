@@ -54,3 +54,18 @@ I chose the hardware with the intention of running many concurrent virtual machi
 NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of heavy use and the silicon lottery), I'm still super impressed with the speed.
 
 The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.
+
+## Building `config.plist`
+
+In order to hide personal details (serial number, UUID), I opted to use a [Handlebars](https://handlebarsjs.com) template that is combined with information from a `.env` file. See `.env.example` for the required info.
+
+This should be enough to compile your `config.plist` into the `OC` directory:
+
+```
+$ yarn
+$ yarn build
+```
+
+You'll see some output from Yarn, and the `index.mjs` build script.
+
+> Note: Only tested in Node 14.

@@ -1,6 +1,6 @@
 # Lone L5 Hackintosh
 
-In October 2019, I realized that using a [notebook](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.5-15-dual-graphics-mid-2015-retina-display-specs.html) as my primary [work-from-home](https://oof.studio) computer was not ideal—I wanted a upgradable, desktop-class processor, near-silent operation (as opposed to the constant whirring of laptop fans), expandable storage… and most of all, an opportunity to _build the tool that I use to make a living_.
+In October 2019, I realized that using a [notebook](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.5-15-dual-graphics-mid-2015-retina-display-specs.html) as my primary [work-from-home](https://oof.studio) computer was not ideal—I wanted an upgradable, desktop-class processor, near-silent operation (as opposed to the constant whirring of laptop fans), expandable storage… and most of all, an opportunity to _build the tool that I use to make a living_.
 
 This repo is a means to track the process of installing macOS onto an Intel-based [Hackintosh](https://en.wikipedia.org/wiki/Hackintosh).
 

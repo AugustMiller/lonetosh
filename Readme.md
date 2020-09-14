@@ -51,11 +51,11 @@ Everything herein is configured to work with a specific set of components:
 
 ### Notes
 
-I chose the hardware with the intention of running many concurrent virtual machines, as a means to isolate development environments (i.e. running many versions of the same software). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
+1. I chose the hardware with the intention of running many concurrent [virtual machines](https://multipass.run/), as a means to isolate development environments (i.e. running [many versions of the same software](https://getnitro.sh/)). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
 
-NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of heavy use and the silicon lottery), I'm still super impressed with the speed.
+2. NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles!
 
-The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.
+3. The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.
 
 ## Building `config.plist`
 

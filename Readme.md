@@ -59,7 +59,7 @@ Everything herein is configured to work with a specific set of components:
 
 ## Building `config.plist`
 
-In order to hide personal details (serial number, UUID), I opted to use a [Handlebars](https://handlebarsjs.com) template that is combined with information from a `.env` file. See `.env.example` for the required info.
+In order to hide personal details (serial number, UUID), I opted to use a [Handlebars](https://handlebarsjs.com) template that is combined with information from an (ignored) `.env` file. See `.env.example` for the required info—then copy that file to `.env` and fill out your own info.
 
 This should be enough to compile your `config.plist` into the `OC` directory:
 
@@ -68,6 +68,6 @@ $ yarn
 $ yarn build
 ```
 
-You'll see some output from Yarn, and the `index.mjs` build script.
+You'll see some output from Yarn, and the `index.mjs` build script. Please be aware that none of the other OpenCore configuration can be modified this way—so, best to fork the repo and experiment with requirements for your platform!
 
 > Note: Only tested in Node 14.

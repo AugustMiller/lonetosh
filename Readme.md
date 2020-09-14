@@ -2,6 +2,8 @@
 
 In October 2019, I realized that using a [notebook](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.5-15-dual-graphics-mid-2015-retina-display-specs.html) as my primary [work-from-home](https://oof.studio) computer was not ideal—I wanted an upgradable, desktop-class processor, near-silent operation (as opposed to the constant whirring of laptop fans), expandable storage… and most of all, an opportunity to _build the tool that I use to make a living_.
 
+That said: while Hackintoshing can offer some significant performance benefits over genuine Apple hardware, _it's no replacement for its reliability_. As long as my work situation demands access to a functional computer, I'll maintain a secondary Apple notebook or desktop—I simply don't have confidence in the long-term stability of a Hackintosh, despite the promise of OpenCore. Furthermore, the lack of easily-accessible hardware support and the uncertainty of many vendors' RMA processes is a hard pill to swallow—I can't risk being offline for a week or more to debug and replace a single component in my work machine!
+
 This repo is a means to track the process of installing macOS onto an Intel-based [Hackintosh](https://en.wikipedia.org/wiki/Hackintosh).
 
 > 🚨 Installing macOS on unsupported hardware is technically a violation of the Apple terms of service. Hackintoshing is legally dubious, and entirely unsupported (both by Apple, and the OpenCore team). Use at your own risk.
@@ -15,7 +17,7 @@ This repo is based on the open-source bootloader, [OpenCore](https://github.com/
 
 OpenCore lives on a special `EFI` partition, and loads natively on most any UEFI-conforming hardware.
 
-See the official [OpenCore installation guide](https://dortania.github.io/OpenCore-Install-Guide/) for more information.
+> 💡 See the official [OpenCore installation guide](https://dortania.github.io/OpenCore-Install-Guide/) for more information.
 
 ### Kexts
 

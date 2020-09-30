@@ -25,7 +25,8 @@ OpenCore lives on a special `EFI` partition, and loads natively on most any UEFI
 - `AppleALC`: 
 - `BrcmBluetoothInjector`: Along with `AirportBrcmFixup`, helps load firmware for wireless network adapters.
 - `BrcmFirmwareData`: Raw firmware data, loaded by `BrcmBluetoothInjector`.
-- `BrcmPatchRAM3`: Specific fixes for macOS 10.15 Catalina
+- `BrcmPatchRAM3`: Specific fixes for Broadcom firmware under macOS 10.15 Catalina.
+- `IntelMausi`: Enables support for Intel Ethernet chipsets—although I haven't had a chance to verify this is functioning as expected!
 - `Lilu`: Critical low-level Kext responsible for coordinating many other patches.
 - `SMCProcessor`: CPU temperature support.
 - `SMCSuperIO`: Concerned with fan speed monitoring.

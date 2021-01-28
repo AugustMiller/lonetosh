@@ -1,4 +1,5 @@
 .env
 OC/config.plist
+.DS_Store
 
 node_modules

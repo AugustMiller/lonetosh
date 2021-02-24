@@ -28,6 +28,7 @@ OpenCore lives on a special `EFI` partition, and loads natively on most any UEFI
 - `BrcmPatchRAM3`: Specific fixes for Broadcom firmware under macOS 10.15 Catalina.
 - `IntelMausi`: Enables support for Intel Ethernet chipsets—although I haven't had a chance to verify this is functioning as expected!
 - `Lilu`: Critical low-level Kext responsible for coordinating many other patches.
+- `NVMeFix`: Recommended by the OpenCore team to manage some unstable power-state changes.
 - `SMCProcessor`: CPU temperature support.
 - `SMCSuperIO`: Concerned with fan speed monitoring.
 - `VirtualSMC`: Emulates or smooths out interfaces with core hardware sensors, including those that make the hardware appear as though it is a genuine Apple computer—combined with carefully-selected SMBIOS settings, this alone gets you most of the way to a functioning Hackintosh.

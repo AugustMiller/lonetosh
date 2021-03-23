@@ -22,7 +22,7 @@ OpenCore lives on a special `EFI` partition, and loads natively on most any UEFI
 ### Kexts
 
 - `AirportBrcmFixup`: Patch supported (but not first-party) WiFi and Bluetooth adapters.
-- `AppleALC`: 
+- `AppleALC`: Helps map audio interfaces, as well as digital audio output via HDMI/DisplayPort.
 - `BrcmBluetoothInjector`: Along with `AirportBrcmFixup`, helps load firmware for wireless network adapters.
 - `BrcmFirmwareData`: Raw firmware data, loaded by `BrcmBluetoothInjector`.
 - `BrcmPatchRAM3`: Specific fixes for Broadcom firmware under macOS 10.15 Catalina.
@@ -51,13 +51,17 @@ Everything herein is configured to work with a specific set of components:
 
 > Do not attempt to use this EFI folder without understanding _why_ it works with this hardware—even if you are running an identical machine.
 
-### Notes
+### Notes, Quirks, Minutae
 
 1. I chose the hardware with the intention of running many concurrent [virtual machines](https://multipass.run/), as a means to isolate development environments (i.e. running [many versions of the same software](https://getnitro.sh/)). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
 
 2. NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles!
 
 3. The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.
+
+4. WhateverGreen's framebuffer patching remains one of the great mysteries. In the spirit of letting macOS and the patcher do as much of the work as possible, I've opted for near-zero configuration—all this does is load the extension, and enable it.
+
+5. At the moment, the `AppleALC` kext is configured with a `layout-id` of `11`, or `<0B000000>.
 
 ## Building `config.plist`
 

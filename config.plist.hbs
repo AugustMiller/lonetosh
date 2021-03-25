@@ -197,18 +197,26 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict/>
+			{{! Audio Interface }}
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>layout-id</key>
 				{{! Layout ID 7 -> <07000000> }}
 				<data>BwAAAA==</data>
 			</dict>
+			{{! UHD 630 IGPU }}
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>07009B3E</data>
 				<key>enable-max-pixel-clock-override</key>
 				<data>01000000</data>
+			</dict>
+			{{! Ethernet Adapter, en0 fix }}
+			<key>PciRoot(0x0)/Pci(0x1C,0x5)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>built-in</key>
+				<data>AQ==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>

@@ -61,7 +61,7 @@ Everything herein is configured to work with a specific set of components:
 
 4. WhateverGreen's framebuffer patching remains one of the great mysteries. In the spirit of letting macOS and the patcher do as much of the work as possible, I've opted for near-zero configuration—all this does is load the extension, and enable it.
 
-5. At the moment, the `AppleALC` kext is configured with a `layout-id` of `11`, or `<0B000000>.
+5. At the moment, the `AppleALC` kext is configured with a `layout-id` of `7`, or `<07000000>.
 
 ## Building `config.plist`
 

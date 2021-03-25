@@ -196,9 +196,12 @@
 		<key>Add</key>
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
+			<dict/>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
-				{{!-- <key>layout-id</key> --}}
-				{{!-- <data>AQAAAA==</data> --}}
+				<key>layout-id</key>
+				{{! Layout ID 7 -> <07000000> }}
+				<data>BwAAAA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -912,7 +915,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 -alcid=11</string>
+				<string>keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -989,7 +992,7 @@
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data>241EEBA52EF2</data>
+			<data>{{ ENV.ROM }}</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>

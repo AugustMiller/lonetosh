@@ -22,15 +22,15 @@ OpenCore lives on a special `EFI` partition, and loads natively on most any UEFI
 ### Kexts
 
 - `AirportBrcmFixup`: Patch supported (but not first-party) WiFi and Bluetooth adapters.
-- `AppleALC`: 
+- `AppleALC`: Helps map audio interfaces, as well as digital audio output via HDMI/DisplayPort.
 - `BrcmBluetoothInjector`: Along with `AirportBrcmFixup`, helps load firmware for wireless network adapters.
 - `BrcmFirmwareData`: Raw firmware data, loaded by `BrcmBluetoothInjector`.
 - `BrcmPatchRAM3`: Specific fixes for Broadcom firmware under macOS 10.15 Catalina.
 - `IntelMausi`: Enables support for Intel Ethernet chipsets—although I haven't had a chance to verify this is functioning as expected!
 - `Lilu`: Critical low-level Kext responsible for coordinating many other patches.
-- `NVMeFix`: Recommended by the OpenCore team to manage some unstable power-state changes.
 - `SMCProcessor`: CPU temperature support.
 - `SMCSuperIO`: Concerned with fan speed monitoring.
+- `USBMap`: A custom-built mapping of all “real” USB ports and their personalities.
 - `VirtualSMC`: Emulates or smooths out interfaces with core hardware sensors, including those that make the hardware appear as though it is a genuine Apple computer—combined with carefully-selected SMBIOS settings, this alone gets you most of the way to a functioning Hackintosh.
 - `WhateverGreen`: Primarily concerned with graphics fixes.
 
@@ -49,15 +49,19 @@ Everything herein is configured to work with a specific set of components:
 - 2 &times; 80mm Noctua NF-R8 Redux PWM-controllable fans
 - [Lone L5](https://loneindustries.com/products/5) case
 
-> Do not attempt to use this EFI folder without understanding _why_ it works with this hardware—even if you are running an identical machine.
+> **Do not** attempt to use this EFI folder without understanding _why_ it works with this hardware—even if you are running an identical machine.
 
-### Notes
+### Notes, Quirks, Minutae
 
-1. I chose the hardware with the intention of running many concurrent [virtual machines](https://multipass.run/), as a means to isolate development environments (i.e. running [many versions of the same software](https://getnitro.sh/)). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
+1. I chose the hardware with the intention of running many concurrent [virtual machines](https://docker.com/), as a means to isolate development environments (i.e. running [many versions of the same software](https://getnitro.sh/)). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
 
-2. NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles!
+2. NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles! The replacement 660p began having issues in January 2021, so I've got a [Western Digital SN750](https://www.newegg.com/western-digital-black-sn750-nvme-1tb/p/N82E16820250110) on order.
 
-3. The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W.
+3. The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W. DisplayPort may work just fine, but having proper use of all three ports was a priority.
+
+4. WhateverGreen's framebuffer patching remains one of the great mysteries. In the spirit of letting macOS and the patcher do as much of the work as possible, I've opted for near-zero configuration—all this does is load the extension, and enable it.
+
+5. At the moment, the `AppleALC` kext is configured with a `layout-id` of `7`, or `<07000000>.
 
 ## Building `config.plist`
 
@@ -72,4 +76,4 @@ $ yarn build
 
 You'll see some output from Yarn, and the `index.mjs` build script. Please be aware that none of the other OpenCore configuration can be modified this way—so, best to fork the repo and experiment with requirements for your platform!
 
-> Note: Only tested in Node 14.
+> Note: Only tested in Node v14 and v15.

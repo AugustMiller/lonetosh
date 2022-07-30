@@ -1,7 +1,6 @@
 import fs from 'fs';
 import dotenv from 'dotenv';
 import hbs from 'handlebars';
-import dateformat from 'date-format';
 
 // Cute logger:
 const log = (message) => console.log(`✔ ${message}`);

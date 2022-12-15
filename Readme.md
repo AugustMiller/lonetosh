@@ -41,7 +41,7 @@ Everything herein is configured to work with a specific set of components:
 - [Intel i5 8500T](https://ark.intel.com/content/www/us/en/ark/products/129941/intel-core-i5-8500t-processor-9m-cache-up-to-3-50-ghz.html) 6-core CPU with embedded UHD 630 graphics. This chip is power-limited to 35W, meaning it can be run cooler + quieter than its non-T counterpart.
 - [Gigabyte Z370n-WIFI](https://www.gigabyte.com/Motherboard/Z370N-WIFI-rev-10/support#support-dl-driver) mainboard
 - 2 &times; 16GB DIMMs of [Corsair Vengeance LPX](https://www.corsair.com/us/en/Categories/Products/Memory/VENGEANCE-LPX/p/CMK32GX4M2D3600C18) RAM
-- 1TB [Intel 660p](https://www.intel.com/content/www/us/en/products/memory-storage/solid-state-drives/consumer-ssds/6-series/ssd-660p-series/660p-series-1-tb-m-2-80mm-3d2.html) NVMe M.2 SSD
+- 1TB ~~[Intel 660p](https://www.intel.com/content/www/us/en/products/memory-storage/solid-state-drives/consumer-ssds/6-series/ssd-660p-series/660p-series-1-tb-m-2-80mm-3d2.html)~~ Western Digital SN750 NVMe M.2 SSD (WDS100T3X0C)
 - [HDPlex 200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) direct-plug PSU
 - Dell DW1560 wireless adapter (Broadcom BCM94352Z chipset), replacing the Intel adapter that comes with the Z370N.
 - 19V Dell AC-DC power brick
@@ -55,7 +55,7 @@ Everything herein is configured to work with a specific set of components:
 
 1. I chose the hardware with the intention of running many concurrent [virtual machines](https://docker.com/), as a means to isolate development environments (i.e. running [many versions of the same software](https://getnitro.sh/)). The 32GB of memory is rarely consumed under regular loads, but given the opportunity, I wanted to reduce the risk of hitting swap while working.
 
-2. NVMe storage is impressive. Although the first 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles! The replacement 660p began having issues in January 2021, so I've got a [Western Digital SN750](https://www.newegg.com/western-digital-black-sn750-nvme-1tb/p/N82E16820250110) on order.
+2. NVMe storage is impressive. Although the first Intel 660p failed after about a year (likely a combination of [heavy use](https://searchstorage.techtarget.com/definition/write-cycle) and the silicon lottery), I'm still super impressed with the speed. I didn't properly research the specific type of storage, and as it turns out, QLC NAND is not nearly as resilient as I thought, with a MTTF of as little as 1,000 write cycles! The replacement 660p began having issues in January 2021, so I replaced it with a [Western Digital SN750](https://www.newegg.com/western-digital-black-sn750-nvme-1tb/p/N82E16820250110).
 
 3. The Gigabyte Z370n is special, because it has an onboard HDMI 2.0 port, which is a requirement for 4K@60Hz video output—or in this case, 3840x1600 on a Dell U3818W. DisplayPort may work just fine, but having proper use of all three ports was a priority.
 
